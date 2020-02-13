@@ -263,7 +263,7 @@ module.exports = function(webpackEnv) {
           }
         }),
       ],
-      // Automatically split vendor and commons
+      // Automatically split vendor and common
       // https://twitter.com/wSokra/status/969633336732905474
       // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
       splitChunks: {
@@ -298,6 +298,13 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        assets: path.resolve(__dirname, '../src/assets/'),
+        components: path.resolve(__dirname, '../src/components/'),
+        constants: path.resolve(__dirname, '../src/constants/'),
+        store: path.resolve(__dirname, '../src/store/'),
+        api: path.resolve(__dirname, '../src/api/'),
+        src: path.resolve(__dirname, '../src/'),
+        helpers: path.resolve(__dirname, '../src/helpers/'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
